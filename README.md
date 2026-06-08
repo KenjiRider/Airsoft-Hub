@@ -4,6 +4,13 @@ Airsoft platform for players, organizers and teams around the world.
 
 International platform for airsoft players and organizers.
 
+airsoft-platform/
+│
+├── client/      # frontend React
+├── server/      # backend Node.js
+├── docs/        # схемы и планы
+├── README.md
+└── .gitignore
 ## Features
 
 * Player profiles

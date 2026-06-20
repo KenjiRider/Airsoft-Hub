@@ -1,22 +1,30 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="logo">
-        AirsoftHub
-      </div>
+      <div className="logo">AirsoftHub</div>
 
       <div className="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Events</a>
-        <a href="#">Teams</a>
-        <a href="#">Community</a>
+        <Link to="/">Home</Link>
+        <Link to="/events">Events</Link>
+        <Link to="/teams">Teams</Link>
+        <Link to="/profile">Profile</Link>
+        <Link to="/my-events">My Events</Link>
+        <Link to="/create-event">Create Event</Link>
       </div>
 
-      <button className="login-btn">
-        Login
-      </button>
+      <div className="auth-buttons">
+        <Link to="/login" className="login-link">
+          Login
+        </Link>
+
+        <Link to="/register">
+          <button className="register-btn">Register</button>
+        </Link>
+      </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

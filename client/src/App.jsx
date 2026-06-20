@@ -1,32 +1,33 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import EventDetails from './pages/EventDetails'
+
 import Navbar from './components/Navbar'
+
+import Home from './pages/Home'
+import Events from './pages/Events'
+import Teams from './pages/Teams'
+import Profile from './pages/Profile'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import MyEvents from "./pages/MyEvents";
+import CreateEvent from "./pages/CreateEvent";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-      <main className="hero">
-        <div className="hero-content">
-          <span className="hero-tag">
-            GLOBAL AIRSOFT COMMUNITY
-          </span>
-          <h1>
-            Find Airsoft Events Around The World
-          </h1>
-          <p>
-            Discover games, teams and players from different countries.
-            Join the global tactical community.
-          </p>
-          <div className="hero-buttons">
-            <button className="primary-btn">
-              Explore Events
-            </button>
-            <button className="secondary-btn">
-              Create Team
-            </button>
-          </div>
-        </div>
-      </main>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/teams" element={<Teams />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/events/:id" element={<EventDetails />} />
+        <Route path="/my-events" element={<MyEvents />} />
+        <Route path="/create-event" element={<CreateEvent />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
